@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olympiad Physics and Maths — what to do</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECEFF2; --card:#F6F8FA; --ink:#1C2630; --muted:#586773;
+  --rule:#CCD5DC; --steel:#2F5E8F; --amber:#A85F18; --green:#2F6B4F; --mark:#E1E8ED;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121820; --card:#19212A; --ink:#E1E8ED; --muted:#94A5B2;
+    --rule:#2B3742; --steel:#7FAEDC; --amber:#E0A160; --green:#7FBF9B; --mark:#202C36;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121820; --card:#19212A; --ink:#E1E8ED; --muted:#94A5B2;
+  --rule:#2B3742; --steel:#7FAEDC; --amber:#E0A160; --green:#7FBF9B; --mark:#202C36;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Serif",Georgia,serif; font-size:17px; line-height:1.62; -webkit-text-size-adjust:100%}
+h1,h2,h3,.ui{font-family:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--steel)}
+
+header.top{border-bottom:1px solid var(--rule); background:var(--card)}
+.top-inner{max-width:920px; margin:0 auto; padding:28px 22px 24px}
+h1{font-size:1.5rem; font-weight:600; margin:0 0 6px; letter-spacing:-.01em}
+.sub{color:var(--muted); font-size:.95rem; margin:0 0 20px; max-width:64ch}
+.ctrl-label{font-family:"IBM Plex Sans",sans-serif; font-size:.74rem; color:var(--muted); display:block; margin-bottom:6px}
+.segmented{display:flex; border:1px solid var(--rule); border-radius:3px; overflow:hidden; width:max-content}
+.segmented button{font-family:"IBM Plex Sans",sans-serif; font-size:.84rem; padding:7px 13px;
+  background:transparent; color:var(--ink); border:0; cursor:pointer; border-right:1px solid var(--rule)}
+.segmented button:last-child{border-right:0}
+.segmented button[aria-pressed="true"]{background:var(--steel); color:var(--card)}
+.segmented button:focus-visible{outline:2px solid var(--steel); outline-offset:-2px}
+
+.wrap{max-width:920px; margin:0 auto; padding:30px 22px 80px}
+section.block{border-top:1px solid var(--rule); padding:32px 0 10px}
+section.block:first-child{border-top:0; padding-top:6px}
+h2{font-size:1.24rem; font-weight:600; margin:0 0 14px; letter-spacing:-.005em}
+h3{font-size:.92rem; font-weight:600; margin:24px 0 9px; color:var(--muted)}
+p{margin:0 0 13px; max-width:74ch}
+ul{margin:0 0 14px; padding-left:20px; max-width:74ch}
+li{margin-bottom:6px}
+
+.verdict{background:var(--card); border-left:3px solid var(--steel); padding:15px 18px; margin:0 0 20px; max-width:74ch}
+.verdict p{margin:0 0 9px} .verdict p:last-child{margin:0}
+.verdict strong{color:var(--ink)}
+
+table{border-collapse:collapse; width:100%; margin:6px 0 18px; font-size:.92rem}
+th,td{text-align:left; padding:7px 10px 7px 0; border-bottom:1px solid var(--rule); vertical-align:top}
+th{font-family:"IBM Plex Sans",sans-serif; font-size:.77rem; font-weight:600; color:var(--muted)}
+.tablescroll{overflow-x:auto}
+td.yes{color:var(--green)} td.no{color:var(--amber)}
+
+.sheet{background:var(--mark); border-radius:4px; padding:16px 18px; margin:0 0 18px; font-size:.93rem}
+.sheet h4{font-family:"IBM Plex Sans",sans-serif; font-size:.78rem; font-weight:600; margin:0 0 9px; color:var(--muted)}
+.sheet code{font-family:"IBM Plex Sans",sans-serif; font-size:.92rem; display:inline-block; margin:0 16px 6px 0}
+
+.q{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:15px 17px; margin:0 0 11px; max-width:74ch}
+.q > p{margin:0; font-size:.97rem}
+.qnum{font-family:"IBM Plex Sans",sans-serif; font-size:.72rem; color:var(--muted); display:block; margin-bottom:5px}
+details{margin-top:11px}
+summary{font-family:"IBM Plex Sans",sans-serif; font-size:.82rem; color:var(--steel); cursor:pointer; width:max-content}
+summary:focus-visible{outline:2px solid var(--steel); outline-offset:3px}
+details[open] summary{color:var(--muted)}
+.ans{margin-top:9px; padding-top:11px; border-top:1px solid var(--rule); font-size:.95rem}
+.ans p{margin:0 0 9px} .ans p:last-child{margin:0}
+
+.ext{border-left:3px solid var(--amber); padding:2px 0 2px 15px; margin:0 0 15px; max-width:74ch}
+.ext > .extlabel{font-family:"IBM Plex Sans",sans-serif; font-size:.74rem; color:var(--amber); display:block; margin-bottom:6px}
+body.tier1 [data-tier="2"]{display:none}
+
+footer{max-width:920px; margin:0 auto; padding:10px 22px 50px; font-size:.85rem; color:var(--muted)}
+@media (max-width:700px){ body{font-size:16px} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+</head>
+<body class="tier1">
+
+<header class="top">
+  <div class="top-inner">
+    <h1>Physics and Maths</h1>
+    <p class="sub">This is not a revision resource like the other three. Both subjects ask for material years beyond where you are, and pretending otherwise would waste the time you have. What follows is where the reachable marks actually are, and what to leave alone.</p>
+    <span class="ctrl-label" id="tierlab">Your category</span>
+    <div class="segmented" role="group" aria-labelledby="tierlab">
+      <button type="button" id="t1" aria-pressed="true">Years 8–9</button>
+      <button type="button" id="t2" aria-pressed="false">Years 10–11</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="block">
+  <h2>Physics</h2>
+
+  <div class="verdict">
+    <p><strong>The single most useful fact:</strong> you are given a formula sheet in the exam. Every equation below is printed on it, along with the constants. You do not need to memorise any of them.</p>
+    <p>What you are being tested on is <em>recognising which formula the situation calls for</em>. That is a skill you can practise in a few hours, and it is worth far more than trying to learn mechanics from a university textbook in eight weeks.</p>
+  </div>
+
+  <p>Here is the whole sheet, with what each equation is for. You don't have to learn them — you have to know which one a question is asking for, so read the middle column rather than the left one.</p>
+
+  <h3>Motion</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Equation</th><th>What it says</th><th>Example</th></tr>
+    <tr><td><strong>v<sub>f</sub> = v<sub>i</sub> + at</strong></td><td>Speed after accelerating for a time. No distance involved.</td><td>From rest at 3 m s⁻² for 4 s: v = 0 + 3×4 = 12 m s⁻¹</td></tr>
+    <tr><td><strong>x<sub>f</sub> = x<sub>i</sub> + v<sub>i</sub>t + ½at²</strong></td><td>How far you've gone after a time. Use when time is given.</td><td>Dropped from rest for 3 s: x = 0 + 0 + ½×9.8×9 = 44 m</td></tr>
+    <tr><td><strong>v<sub>f</sub>² = v<sub>i</sub>² + 2a(x<sub>f</sub> − x<sub>i</sub>)</strong></td><td>Links speed to distance with <em>no time</em>. The one to reach for when time isn't mentioned.</td><td>20 m s⁻¹, braking at −5 m s⁻²: 0 = 400 − 10x, so x = 40 m to stop</td></tr>
+    <tr><td><strong>a = v²/r</strong></td><td>Acceleration of anything going round a circle at steady speed, pointing to the centre.</td><td>10 m s⁻¹ round a 20 m bend: a = 100/20 = 5 m s⁻²</td></tr>
+  </table>
+  </div>
+  <p>Three kinematics equations, and the trick is choosing between them: each one leaves out a different quantity. The first has no distance, the second no final speed, the third no time. Work out which quantity the question never mentions, and use the equation that omits it.</p>
+
+  <h3>Forces, energy and momentum</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Equation</th><th>What it says</th><th>Example</th></tr>
+    <tr><td><strong>F = ma</strong></td><td>The resultant force needed to accelerate a mass.</td><td>1200 kg car at 2 m s⁻²: F = 2400 N</td></tr>
+    <tr><td><strong>p = mv</strong></td><td>Momentum. Its total is conserved in any collision or explosion.</td><td>0.5 kg ball at 8 m s⁻¹: p = 4 kg m s⁻¹</td></tr>
+    <tr><td><strong>p<sub>f</sub> = p<sub>i</sub> + Ft</strong></td><td>Impulse — a force acting for a time changes momentum.</td><td>10 N for 3 s on p = 5: new p = 5 + 30 = 35 kg m s⁻¹</td></tr>
+    <tr><td><strong>F<sub>f</sub> = μN</strong></td><td>Friction force, from the coefficient and the force pressing the surfaces together.</td><td>μ = 0.3, N = 100 N: friction = 30 N</td></tr>
+    <tr><td><strong>F = −kx</strong></td><td>Hooke's law. A spring pulls back in proportion to how far it's stretched. The minus sign means "opposing".</td><td>k = 200 N m⁻¹ stretched 0.05 m: F = 10 N back</td></tr>
+    <tr><td><strong>W = Fd</strong></td><td>Work done — energy transferred by a force moving something.</td><td>50 N pushing over 3 m: W = 150 J</td></tr>
+    <tr><td><strong>KE = ½mv²</strong></td><td>Kinetic energy. Note the square — doubling speed quadruples energy.</td><td>2 kg at 6 m s⁻¹: KE = ½×2×36 = 36 J</td></tr>
+    <tr><td><strong>U<sub>g</sub> = mgh</strong></td><td>Gravitational potential energy from being at a height.</td><td>4 kg lifted 2.5 m: U = 4×9.8×2.5 = 98 J</td></tr>
+    <tr><td><strong>U<sub>k</sub> = ½kx²</strong></td><td>Energy stored in a stretched or compressed spring.</td><td>k = 200, x = 0.1 m: U = ½×200×0.01 = 1 J</td></tr>
+    <tr><td><strong>P = W/t</strong></td><td>Power — how fast energy is transferred.</td><td>600 J in 4 s: P = 150 W</td></tr>
+  </table>
+  </div>
+  <p>The energy equations are most often used in pairs. A ball falling converts U<sub>g</sub> into KE, so mgh = ½mv² — and because m appears on both sides it cancels, which is why all objects fall at the same rate.</p>
+
+  <h3>Electricity</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Equation</th><th>What it says</th><th>Example</th></tr>
+    <tr><td><strong>V = IR</strong></td><td>Ohm's law, the workhorse of every circuit question.</td><td>12 V across 4 Ω: I = 3 A</td></tr>
+    <tr><td><strong>I = q/t</strong></td><td>Current is charge flowing per second.</td><td>6 C in 2 s: I = 3 A</td></tr>
+    <tr><td><strong>R<sub>series</sub> = ΣR</strong></td><td>Resistors in one loop: just add them.</td><td>10 + 20 + 30 = 60 Ω</td></tr>
+    <tr><td><strong>1/R<sub>parallel</sub> = Σ1/R</strong></td><td>Resistors on separate branches: add reciprocals, then invert. Always less than the smallest one.</td><td>Two 10 Ω: 1/R = 0.2, R = 5 Ω</td></tr>
+    <tr><td><strong>R = ρL/A</strong></td><td>Resistance of a wire: longer means more, thicker means less.</td><td>Double the length, double R. Double the area, halve R.</td></tr>
+    <tr><td><strong>F = q₁q₂/4πε₀r²</strong></td><td>Coulomb's law — force between two charges. Inverse square, same shape as gravity.</td><td>Double the separation and the force drops to a quarter.</td></tr>
+    <tr><td><strong>F = qE</strong></td><td>Force on a charge sitting in an electric field.</td><td>q = 2×10⁻⁶ C in E = 500 N C⁻¹: F = 1×10⁻³ N</td></tr>
+    <tr><td><strong>V = −Ed</strong></td><td>Potential difference across a uniform field, from field strength and distance.</td><td>E = 200 N C⁻¹ over 0.05 m: V = 10 V</td></tr>
+  </table>
+  </div>
+
+  <h3>Waves and light</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Equation</th><th>What it says</th><th>Example</th></tr>
+    <tr><td><strong>v = λf</strong></td><td>Wave speed = wavelength × frequency. Works for every wave.</td><td>λ = 2 m at 170 Hz: v = 340 m s⁻¹, the speed of sound</td></tr>
+    <tr><td><strong>E = hf</strong></td><td>Energy of one photon. Higher frequency means more energetic light.</td><td>Why ultraviolet damages skin and red light doesn't</td></tr>
+    <tr><td><strong>1/f = 1/d<sub>i</sub> + 1/d<sub>o</sub></strong></td><td>Lens and mirror equation, linking focal length to image and object distances.</td><td>f = 10 cm, object at 30 cm: image at 15 cm</td></tr>
+    <tr><td><strong>f = r/2</strong></td><td>A curved mirror's focal length is half its radius of curvature.</td><td>r = 40 cm: f = 20 cm</td></tr>
+  </table>
+  </div>
+  <p>The last three are printed on the sheet even though optics doesn't appear in either topic list — one of several places where the syllabus documents don't quite agree with each other. If a formula is on the sheet, treat it as fair game.</p>
+
+  <div data-tier="2">
+  <h3>Rotation and oscillation — Years 10–11</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Equation</th><th>What it says</th><th>Example</th></tr>
+    <tr><td><strong>τ = Iα</strong></td><td>The rotational version of F = ma. Torque causes angular acceleration.</td><td>I = 2 kg m², α = 3 rad s⁻²: τ = 6 N m</td></tr>
+    <tr><td><strong>I<sub>ring</sub> = mr²</strong></td><td>Moment of inertia of a ring — all the mass is at the rim.</td><td>Largest I for a given mass and radius</td></tr>
+    <tr><td><strong>I<sub>disk</sub> = ½mr²</strong></td><td>A disc, with mass spread from centre to rim, so half the ring's value.</td><td>2 kg, r = 0.5 m: I = 0.25 kg m²</td></tr>
+    <tr><td><strong>I<sub>stick,centre</sub> = ml²/12</strong></td><td>A thin rod spun about its middle.</td><td>Used with the next line for other axes</td></tr>
+    <tr><td><strong>I<sub>d</sub> = I₀ + md²</strong></td><td>Parallel axis theorem: shift the axis a distance d and add md².</td><td>Rod about its <em>end</em>: ml²/12 + m(l/2)² = <strong>ml²/3</strong></td></tr>
+    <tr><td><strong>L = Iω</strong></td><td>Angular momentum. Conserved — which is why a spinning skater speeds up on pulling their arms in.</td><td>Halve I and ω doubles</td></tr>
+    <tr><td><strong>T = 2π√(L/g)</strong></td><td>Period of a pendulum. Depends on length only, not on the mass.</td><td>L = 1 m: T ≈ 2.0 s</td></tr>
+    <tr><td><strong>T = 2π√(m/k)</strong></td><td>Period of a mass on a spring. Heavier is slower, stiffer is faster.</td><td>m = 0.5 kg, k = 50: T ≈ 0.63 s</td></tr>
+    <tr><td><strong>f = ω/2π = 1/T</strong></td><td>Converting between frequency, angular frequency and period.</td><td>T = 0.5 s: f = 2 Hz</td></tr>
+  </table>
+  </div>
+  <p>The parallel axis line is worth noticing, because one of the syllabus's own sample questions asks for the moment of inertia of a rod about its end — and that is not printed on the sheet. You derive it from the two lines that are.</p>
+  </div>
+
+  <p>Constants given include G, c, the gas constant R, ε₀, Avogadro's number, the elementary charge, Planck's constant and the speed of sound in air. So anything asking you to recall a number is testing something other than memory.</p>
+
+  <h3>Where the marks are</h3>
+  <p>The exam starts easy and gets harder. The syllabus says so explicitly, and the sample questions confirm it — the opening questions are solvable in seconds by anyone who knows which formula to use. <strong>Your target is to clear those completely and not run out of time on them.</strong></p>
+
+  <div class="tablescroll">
+  <table>
+    <tr><th>Topic</th><th>Attempt?</th><th>Why</th></tr>
+    <tr><td>Kinematics (the three equations)</td><td class="yes">Yes</td><td>Substitution into given formulas. Most reachable marks on the paper.</td></tr>
+    <tr><td>Forces, F = ma, friction</td><td class="yes">Yes</td><td>Familiar from KS3 and IGCSE ideas; formulas given.</td></tr>
+    <tr><td>Energy and momentum conservation</td><td class="yes">Yes</td><td>Conceptually simple: what goes in comes out.</td></tr>
+    <tr><td>Series and parallel circuits</td><td class="yes">Yes</td><td>Arithmetic with given formulas. Very reliable marks.</td></tr>
+    <tr><td>Circular motion, gravity</td><td class="yes">Worth trying</td><td>Two formulas, often combined. Practise a few.</td></tr>
+    <tr><td>Electrostatics (Coulomb's law)</td><td class="yes">Worth trying</td><td>Inverse square — same shape as gravity.</td></tr>
+    <tr><td data-tier="2">Thermodynamics, specific heat</td><td class="yes" data-tier="2">Yes</td><td data-tier="2">Self-contained and the most learnable of the additions.</td></tr>
+    <tr><td data-tier="2">Sound and waves</td><td class="yes" data-tier="2">Yes</td><td data-tier="2">v = λf plus qualitative ideas about pitch and loudness.</td></tr>
+    <tr><td data-tier="2">Rotation, moment of inertia</td><td class="no" data-tier="2">Only if time</td><td data-tier="2">Needs real understanding, not just the formula.</td></tr>
+    <tr><td data-tier="2">Simple harmonic motion</td><td class="no" data-tier="2">Leave it</td><td data-tier="2">Deep topic; poor return in eight weeks.</td></tr>
+    <tr><td data-tier="2">Capacitors</td><td class="no" data-tier="2">Leave it</td><td data-tier="2">Not even on the formula sheet.</td></tr>
+  </table>
+  </div>
+
+  <h3>Reading the question for the formula</h3>
+  <div class="tablescroll">
+  <table>
+    <tr><th>If the question mentions…</th><th>Reach for</th></tr>
+    <tr><td>Starting speed, final speed, time, acceleration, distance — any three given</td><td>One of the three kinematics equations. Pick the one missing the quantity you don't have.</td></tr>
+    <tr><td>A collision, or two objects pushing apart</td><td>Momentum conservation: total p before = total p after</td></tr>
+    <tr><td>A drop, a slide, a swing — height changing into speed</td><td>mgh = ½mv²</td></tr>
+    <tr><td>Anything moving in a circle at steady speed</td><td>a = v²/r, then F = ma</td></tr>
+    <tr><td>Resistors in a loop with one path</td><td>Series: add them. Then V = IR.</td></tr>
+    <tr><td>Resistors on separate branches</td><td>Parallel: add reciprocals, then invert.</td></tr>
+    <tr><td>Two charges, or two masses, and a distance</td><td>An inverse square law. Doubling distance quarters the force.</td></tr>
+  </table>
+  </div>
+
+  <div class="q">
+    <span class="qnum">Worked example — a typical early question</span>
+    <p>Five resistors, each 30 Ω. What is the difference between their total resistance connected in series and connected in parallel?</p>
+    <details><summary>Show answer</summary>
+      <div class="ans">
+        <p>Series: just add them. 5 × 30 = 150 Ω.</p>
+        <p>Parallel: 1/R = 5 × (1/30) = 5/30 = 1/6, so R = 6 Ω.</p>
+        <p>Difference = 150 − 6 = <strong>144 Ω</strong>.</p>
+        <p>Two formulas, both given to you, about twenty seconds of arithmetic. Questions like this are worth the same as the hard ones at the end. Clear them first.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="q">
+    <span class="qnum">Worked example — when the formula isn't enough</span>
+    <p>A planet keeps the same density but its radius doubles. What happens to the gravitational acceleration at its surface?</p>
+    <details><summary>Show answer</summary>
+      <div class="ans">
+        <p>The trap is to see g = GM/R² and say that doubling R quarters g. But M is not fixed — a bigger planet of the same density has more mass.</p>
+        <p>Mass = density × volume, and volume goes as R³. So M ∝ R³.</p>
+        <p>Therefore g ∝ R³/R² = R. Doubling the radius <strong>doubles</strong> g.</p>
+        <p>This is the shape of the harder questions: the formula is given, but you have to notice that one of its symbols is itself changing. Read what is held constant.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="ext" data-tier="2">
+    <span class="extlabel">Years 10–11 — one warning</span>
+    <p>The formula sheet is not exhaustive. One of the syllabus's own sample questions asks for the work done by an ideal gas expanding at constant temperature, which needs W = nRT ln(V₂/V₁) — a formula that is not on the sheet and involves a logarithm.</p>
+    <p>So treat the sheet as a floor, not a ceiling. If a question seems to need something that isn't printed, it probably does. It is also fine to skip that question.</p>
+  </div>
+
+  <h3>How to practise</h3>
+  <p>Past <strong>Physics Bowl</strong> papers, free at aapt.org, are the source the syllabus names. Do the first fifteen questions of two or three papers rather than one paper all the way through — the early questions are where your marks are, and that is what you should get fast at.</p>
+</section>
+
+<section class="block">
+  <h2>Maths</h2>
+
+  <div class="verdict">
+    <p><strong>Be straight about this one.</strong> The syllabus lists Vieta's formulas, the binomial theorem, modular arithmetic, telescoping series, Heron's formula, stars and bars, and the pigeonhole principle. That is <em>competition mathematics</em> — a separate discipline with its own training tradition, not harder school maths.</p>
+    <p>It cannot be taught from scratch in eight weeks alongside four other subjects, and attempting it would cost you marks in biology and earth science that are genuinely within reach. So the plan for maths is deliberately small.</p>
+  </div>
+
+  <p>The difficulty benchmark is <strong data-tier="2">AMC10</strong><strong class="t1only">AMC8</strong>, a US contest. That matters, because those contests reward clever reasoning about elementary material far more than they reward advanced technique. A thoughtful student with no competition training can usually get the first several questions of an AMC paper right. That is your target.</p>
+
+  <h3>Six things worth learning, in order</h3>
+  <p>Each of these is quick, transfers immediately, and shows up constantly.</p>
+  <ul>
+    <li><strong>Complementary counting.</strong> When "at least one" appears, count the opposite and subtract from the total. Almost always faster.</li>
+    <li><strong>The two special triangles.</strong> 45-45-90 has sides in ratio 1 : 1 : √2. 30-60-90 has 1 : √3 : 2. Recognising them removes most trigonometry.</li>
+    <li><strong>Pythagorean triples.</strong> Memorise 3-4-5, 5-12-13, 8-15-17, 7-24-25 and their multiples. Spotting one saves a calculation and often reveals the intended route.</li>
+    <li><strong>Casework, done neatly.</strong> Break a problem into cases that don't overlap and don't leave gaps, solve each, add. Unglamorous and very effective.</li>
+    <li><strong>Vieta's formulas.</strong> For ax² + bx + c = 0, the roots sum to −b/a and multiply to c/a. Lets you answer questions about roots without finding them.</li>
+    <li><strong>Last-digit and remainder arguments.</strong> To find the last digit of a large power, look at the cycle. 7¹ ends in 7, 7² in 9, 7³ in 3, 7⁴ in 1, then it repeats every four.</li>
+  </ul>
+
+  <div class="q">
+    <span class="qnum">Worked example — complementary counting</span>
+    <p>How many three-digit numbers contain at least one digit 7?</p>
+    <details><summary>Show answer</summary>
+      <div class="ans">
+        <p>Counting directly means handling "exactly one 7", "exactly two", "exactly three" and avoiding double-counting. Slow and error-prone.</p>
+        <p>Instead count the ones with <em>no</em> 7 and subtract.</p>
+        <p>Total three-digit numbers: 100 to 999, so 900.</p>
+        <p>With no 7: the hundreds digit can be 1–9 except 7, so 8 choices. The tens and units can each be 0–9 except 7, so 9 choices each. That gives 8 × 9 × 9 = 648.</p>
+        <p>At least one 7 = 900 − 648 = <strong>252</strong>.</p>
+        <p>Three lines instead of three cases. Whenever a question says "at least", check whether the complement is easier first.</p>
+      </div>
+    </details>
+  </div>
+
+  <h3>In the exam</h3>
+  <ul>
+    <li>Read every maths question, but decide within about fifteen seconds whether you can see a route. If not, move on and come back.</li>
+    <li>Answers are multiple choice. If you can rule out options by size, sign or parity, do — an educated guess beats a blank.</li>
+    <li>Don't let maths eat time budgeted for biology or earth science. Those are where your preparation can actually show.</li>
+  </ul>
+
+  <h3>How to practise</h3>
+  <p>Past <strong class="t1only">AMC8</strong><strong data-tier="2">AMC10</strong> papers with full solutions are free on the Art of Problem Solving wiki. Do the first ten questions of three or four papers. Read the solutions to the ones you miss — not to memorise them, but to notice the moves that keep recurring, because a small number of ideas cover a lot of questions.</p>
+  <p>Half an hour a week is a sensible budget. More than that is coming out of subjects where it would do more good.</p>
+</section>
+
+<section class="block">
+  <h2>How to divide your time</h2>
+  <p>Eight weeks, five subjects. If you split it evenly you will do badly at all five. A defensible split:</p>
+  <div class="tablescroll">
+  <table>
+    <tr><th>Subject</th><th>Share of your study time</th><th>Because</th></tr>
+    <tr><td>Biology</td><td>30%</td><td>You've been taught most of it. Practice converts that into marks.</td></tr>
+    <tr><td>Earth science</td><td>30%</td><td>All new, but all learnable. The best return per hour on the paper.</td></tr>
+    <tr><td>Chemistry</td><td>25%</td><td>Calculations reward practice; the core is reachable.</td></tr>
+    <tr><td>Physics</td><td>10%</td><td>Formulas are given. Spend it on recognising which to use.</td></tr>
+    <tr><td>Maths</td><td>5%</td><td>Familiarity only. The rest cannot be built in the time.</td></tr>
+  </table>
+  </div>
+  <p>Nobody is expected to score highly across all five. The syllabus says so, twice, in every subject. What separates students is not covering everything — it is being genuinely solid on the parts that were reachable.</p>
+</section>
+
+</div>
+
+<footer>Round 1 is on 14–16 November 2026. Al Yasmina British Academy science department.</footer>
+
+<script>
+(function(){
+  var t1=document.getElementById('t1'), t2=document.getElementById('t2');
+  var t1only=Array.prototype.slice.call(document.querySelectorAll('.t1only'));
+  function setTier(one){
+    document.body.classList.toggle('tier1',one);
+    t1.setAttribute('aria-pressed',one?'true':'false');
+    t2.setAttribute('aria-pressed',one?'false':'true');
+    t1only.forEach(function(el){ el.style.display = one ? '' : 'none'; });
+    try{ localStorage.setItem('huso-pm-tier',one?'1':'2'); }catch(e){}
+  }
+  t1.addEventListener('click',function(){setTier(true);});
+  t2.addEventListener('click',function(){setTier(false);});
+  var start=true;
+  try{ if(localStorage.getItem('huso-pm-tier')==='2'){ start=false; } }catch(e){}
+  setTier(start);
+})();
+</script>
+</body>
+</html>
